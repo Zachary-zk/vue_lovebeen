@@ -1,0 +1,161 @@
+.list{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 4.5rem;
+  bottom: 4.5rem;
+  background: #fff;
+}
+.list_left{
+  width: 80px;
+  overflow-y: scroll;
+  background: #f8f8f8;
+
+  li{
+    display: table;
+    height: 54px;
+    width: 80px;
+    line-height: 54px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+
+    &.active{
+      border-left: 4px solid #ffd600;
+    }
+  }
+}
+
+.list_right{
+  flex: 1;
+  position: relative;
+  overflow-y: scroll;
+
+  ul.list_head{
+    padding-top: 8px;
+    background-color: #fff;
+    position: fixed;
+    top: 4.5rem;
+    left: 80px;
+    right:0;
+    font-size: 1rem;
+    z-index: 9;
+
+    li{
+      float: left;
+      width: 50%;
+      text-align: center;
+      color: #777;
+      border-bottom: 1px solid #e7eaeb;
+      border-top: 1px solid #fff;
+      padding-bottom: 8px;
+      margin-bottom: 2px;
+    }
+  }
+
+  .list_body{
+    margin-top: 43px;
+    width: 100%;
+
+    li{
+      position: relative;
+      border-bottom: 1px solid #e7eaeb;
+      border-top: 1px solid #fff;
+      padding-bottom: 8px;
+      margin-bottom: 2px;
+    }
+
+    .box{
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      margin-left: 10px;
+      top: 15px;
+      border-radius: 3px;
+      cursor: pointer;
+
+      img{
+        height: 55px;
+        width: 55px;
+        vertical-align: middle;
+        border: 0;
+      }
+    }
+
+    .info{
+      margin: 15px 15px 15px 75px;
+
+      h4{
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-top: 8px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+      }
+      p{
+        font-style: normal;
+        line-height: 20px;
+        vertical-align: bottom;
+
+        &.list1{
+          color: #999;
+        }
+
+        b{
+          color: #f00;
+        }
+        s{
+          color: #999999;
+        }
+      }
+    }
+
+    .add{
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      width: 6rem;
+      height: 5rem;
+      
+
+      span{
+      position: absolute;
+      right: 0;
+      bottom:0;
+      width: 2rem;
+      height: 2rem;
+      background: #ff4300 url(../../assets/images/pro.png) right center;
+      background-size: cover;
+      border-radius: 50%;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ffbe89;
+      }
+      .span1{
+        left: 0;
+        background-position: left;
+        z-index: 9;
+
+        // &.active{
+        //   display: none;
+        // }
+      }
+      b{
+        position: absolute;
+        left:0%;
+        top:50%;
+        line-height: 3rem;
+        width: 6rem;
+        height: 3rem;
+        text-align: center;
+        border-radius: 2.5rem;
+        color: #333;
+
+        &.active{
+          display: none;
+        }
+      }
+    }
+  }
+}

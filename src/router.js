@@ -9,6 +9,11 @@ export default new Router({
       path: '/shoping',
       name: 'shoping',
       component: () => import('./views/shoping/Shoping.vue')
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: () => import('./views/list/List.vue')
     }
   ]
 })

@@ -1,0 +1,247 @@
+.shoping{
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  bottom: 5rem;
+  background-color: #efefef;
+}
+
+.block{
+  background-color: #fff;
+  margin: 1rem 0;
+  display: block;
+  background-image: url(../../assets/images/place.png);
+  background-repeat: repeat;
+  background-position: left top, left bottom;
+  background-size: auto 0.3rem;
+  padding: 3px 0;
+
+  table{
+    width: 100%;
+    line-height: 1.4rem;
+    background-color: #fff;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th{
+      padding: 0.7rem 1rem 0.7rem 1.5rem;
+      font-weight: 400;
+      text-align: left;
+      vertical-align: baseline;
+    }
+  }
+}
+
+.main-container{
+  padding: 0.5rem 0 0 0;
+  background-color: #fff;
+  position: relative;
+
+  .fast_cart{
+    .fast-super{
+      display: inline-block;
+      height: 3rem;
+      color: #999;
+      font-size: 12px;
+      padding-left: 1.4rem;
+      background: 1.6rem top no-repeat;
+      background-size: 2rem;
+      line-height: 3rem;
+
+      &::before{
+        background-color: #ffd600;
+        content: '';
+        display: inline-block;
+        width: 0.3rem;
+        height: 1.2rem;
+        vertical-align: -0.1rem;
+        border-radius: 0.2rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    .addBtn{
+      color: #e64f1a;
+      position: absolute;
+      right: 1.4rem;
+      top: 0.5rem;
+      font-size: 12px;
+      width: 5rem;
+      height: 1.6rem;
+      line-height: 1.6rem;
+      border-radius: 1.2rem;
+      border-width: 1px;
+      border-style: solid;
+      text-align: center;
+    }
+  }
+
+  .group-proptext{
+    color: #999;
+    font-size: 14px;
+    line-height: 3rem;
+    padding-left: 1.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .theme-border{
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+  .group-receive{
+    position: relative;
+    padding-left: 1.4rem;
+    height: 4rem;
+    line-height: 4rem;
+    padding-right: 2.5rem;
+    background-image: url(../../assets/images/more.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 1rem;
+
+    .theme-redfont{
+      color: #e64f1a;
+    }
+    .ugroup-receive-ext{
+      float: right;
+    }
+  }
+
+  .group-comment {
+    position: relative;
+    padding-left: 1.4rem;
+    height: 4rem;
+    line-height: 4rem;
+
+    .comment-wrapper{
+      position: absolute;
+      left: 7rem;
+      top: 0;
+      bottom: 0;
+      right: 2.2rem;
+
+      input{
+        width: 100%;
+        height: 2.3rem;
+        border: solid 1px #cecece;
+        text-indent: 0.5rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  .settlement {
+    padding-left: 1.8rem;
+    line-height: 4.5rem;
+    font-size: 16px;
+
+    .selectAll {
+      display: inline-block;
+      min-width: 5rem;
+      padding-left: 2.5rem;
+      background-size: 1.8rem 1.8rem;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    .theme-redfont {
+      color: #e64f1a;
+    }
+    .chooseOk {
+      float: right;
+      width: 8rem;
+      text-align: center;
+      background-color: #ffd600;
+    }
+    .selectAll-false{
+      background-image:url(../../assets/images/check.png)
+    }
+    .selectAll-true{
+      background-image: url(../../assets/images/checked.png)
+    }
+  }
+
+  .group-list {
+    table-layout: fixed;
+    line-height: 4rem;
+
+    .group-item-checkbox {
+      background-image: url(../../assets/images/check.png);
+      background-size: 1.8rem 1.8rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 5rem;
+
+      &.active1{
+        background-image: url(../../assets/images/checked.png)
+      }
+    }
+    td{
+      position: relative;
+    }
+
+    .group-item-img-wrap{
+      background-size: 100% 100%;
+      width: 5rem;
+      height: 5rem;
+      position: relative;
+
+      .group-item-img {
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+      }
+    }
+
+    .group-item-name {
+      line-height: 2.6rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .product-operates {
+      position: absolute;
+      width: 6rem;
+      height: 5rem;
+      line-height: 5rem;
+      right: 10px;
+      bottom: 0;
+      text-align: center;
+      border-radius: 1.3rem;
+      color: #f40;
+
+      div{
+        background-image: url(../../assets/images/pro.png);
+        background-color: red;
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        background-size: 200% 100%;
+        border-radius: 50%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ffbe89;
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 2rem;
+        height: 2rem;
+      }
+      .span1{
+        background-position: left center;
+      }
+      .span2{
+        background-position:  right center;
+        right: 0;
+      }
+      
+      b{
+        color: #333;
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -1,3 +1,85 @@
 <div class="shoping">
-  zk
+  <div class="block">
+    <table>
+      <tbody>
+        <tr>
+          <th width="28%">
+            收
+            <span class="ui-hidden"> </span>货
+            <span class="ui-hidden"> </span>人
+          </th>
+          <td>刘玺&nbsp;先生</td>
+          <td width="17%" rowspan="3" class="more">修改
+          </td>
+        </tr>
+        <tr>
+          <th>
+            电
+            <span class="ui-hidden"><br></span>
+            话
+          </th>
+          <td>153********</td>
+        </tr>
+        <tr>
+          <th>收货地址</th>
+          <td style="font-weight: 700;">上海市浦东新区航头镇航都路18号-黑马程序员</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="main-container">
+    <div class="fast_cart">
+      <span class="fast-super">闪送超市</span>
+      <span class="addBtn">凑单专区</span>
+    </div>
+    <p class="group-proptext theme-border">
+      ￥0起送，22点后满￥69运费5元起，不满￥69运10元
+    </p>
+    <p class="group-receive theme-border">
+      收货时间&nbsp;&nbsp;
+      <span class="ugroup-receive-ext">&nbsp;可预定</span>
+      <span class="theme-redfont">08:00-09:00</span>
+    </p>
+    <div class="group-comment theme-border">
+      收货备注&nbsp;&nbsp;
+      <div class="comment-wrapper">
+        <input type="text" maxlength="100" value="" placeholder="可输入100字以内特殊要求内容">
+      </div>
+    </div>
+
+    <table width="100%" class="group-list theme-border" style="table-layout: fixed;" v-for="(item, index) in DataObj" :key="item.id">
+      <tbody>
+        <tr class="bor">
+          <td class="group-item-checkbox" :class="{active1:item.isMai}"  @click="changeMai(item.id,item.isMai)" style="width: 5rem;"></td>
+          <td style="width: 5rem;">
+            <div class="group-item-img-wrap">
+              <div class="group-item-img">
+                <img :src="item.img" width="100%"></div>
+              <div class="maskText"></div>
+            </div>
+          </td>
+          <td>
+            <div class="group-item-name ui-ellipsis">
+              {{item.name}}
+            </div>
+            <div width="50px" class="group-item-price">
+              ￥{{item.partner_price}}
+            </div>
+            <div class="product-operates">
+              <div class="span1" @click=lessShop(item.id)></div>
+              <b>{{dataObjNum[item.id]}}</b>
+              <div class="span2" @click=addShop(item)></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="settlement">
+      <span class="selectAll" :class="{'selectAll-true':selectAll,'selectAll-false':selectAll}" @click="isAll">全选</span>
+      共:
+      <span class="theme-redfont">￥{{meny}}</span>
+      <div class="chooseOk">选好了</div>
+    </div>
+  </div>
 </div>

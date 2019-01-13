@@ -1,0 +1,39 @@
+<div class="list">
+  <div class="list_left">
+    <ul>
+      <li v-for="(item, index) in categories" :key="item.id" @click="changelist(item.id)">
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="list_right">
+    <ul class="list_head">
+      <li>全部分类</li>
+      <li>综合排序</li>
+    </ul>
+    <ul class="list_body">
+      <li v-for="(item1, index) in listAll" :key="index">
+        <div class="box">
+          <img :src="item1.img" alt="">
+        </div>
+        <div class="info">
+          <h4>{{item1.name}}</h4>
+          <p class="list1">{{ item1.specifics }}</p>
+          <p>
+            <b>￥{{ item1.price }}</b>
+            <s>￥{{item1.partner_price}}</s>
+          </p>
+        </div>
+        <div class="add">
+          <i v-show="jsShopNum[item1.id] > 0" >
+            <span class="span1" @click="lessShop(item1.id)"></span>
+          </i>
+          <b v-show="jsShopNum[item1.id] > 0"> {{jsShopNum[item1.id]}}</b>
+          <span class="span2" @click="addShop(item1)">
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
