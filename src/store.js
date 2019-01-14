@@ -9,6 +9,10 @@ export default new Vuex.Store({
     isAdd: {}
   },
   mutations: {
+    getItem (state) {
+      state.shopData = JSON.parse(localStorage.getItem('shopData')) || []
+      state.isAdd = JSON.parse(localStorage.getItem('isAdd')) || {}
+    },
     addShop (state, obj) {
       if (state.isAdd[obj.id]) {
         state.isAdd[obj.id]++
@@ -24,19 +28,24 @@ export default new Vuex.Store({
       if (state.isAdd[id] <= 0) {
         const index = state.shopData.findIndex(v => v.id === id)
         state.shopData.splice(index, 1)
+        delete state.isAdd[id]
       }
     },
-    changeMai (state, obj) {
-      const index = state.shopData.find(v => v.id === obj.id)
-
-      Vue.set(index, 'isMai', !obj.bool)
-      state.shopData.push('zk')
-      state.shopData.splice(state.shopData.length - 1, 1)
+    changeMai (state, { id, bool }) {
+      const index = state.shopData.findIndex(v => v.id === id)
+      const obj = state.shopData.find(v => v.id === id)
+      obj.isMai = !bool
+      state.shopData.splice(index, 1, obj)
+      // Vue.set(index, 'isMai', !bool)
+      // state.shopData.push('zk')
+      // state.shopData.splice(state.shopData.length - 1, 1)
     },
     // 全选 / 全不选
     selectAll (state, bool) {
       state.shopData.forEach((v) => {
         v.isMai = bool
+        state.shopData.push('zk')
+        state.shopData.splice(state.shopData.length - 1, 1)
       })
     }
   },

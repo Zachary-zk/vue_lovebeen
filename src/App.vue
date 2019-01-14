@@ -50,14 +50,37 @@ export default {
       ]
     }
   },
+  created () {
+    this.$store.commit('getItem')
+  },
   computed: {
     zongShopNum () {
       let num = 0
       for (let key in this.$store.state.isAdd) {
         num += this.$store.state.isAdd[key]
       }
-
       return num
+    },
+    jianShopData () {
+      return this.$store.state.shopData
+    },
+    jianIsAdd () {
+      return this.$store.state.isAdd
+    }
+  },
+
+  watch: {
+    jianShopData: {
+      handler: function (val, oldVal) {
+        localStorage.setItem('shopData', JSON.stringify(val))
+      },
+      deep: true
+    },
+    jianIsAdd: {
+      handler: function (val, oldVal) {
+        localStorage.setItem('isAdd', JSON.stringify(val))
+      },
+      deep: true
     }
   }
 
